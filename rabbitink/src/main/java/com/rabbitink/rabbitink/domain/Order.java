@@ -1,5 +1,7 @@
 package com.rabbitink.rabbitink.domain;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +17,7 @@ public class Order {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String orderStatus;
+	private LocalDateTime orderdate;
 	private String isDone;
 	private String productType;
 	private String unitprice;
@@ -34,6 +37,14 @@ public class Order {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public LocalDateTime getOrderdate() {
+		return orderdate;
+	}
+
+	public void setOrderdate(LocalDateTime orderdate) {
+		this.orderdate = orderdate;
 	}
 
 	public String getOrderStatus() {

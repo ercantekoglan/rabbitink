@@ -23,6 +23,7 @@ public class Authority  implements GrantedAuthority {
 	private Long id;
 	
 	private String authority;
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;

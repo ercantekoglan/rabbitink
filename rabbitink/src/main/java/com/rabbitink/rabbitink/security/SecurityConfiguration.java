@@ -25,7 +25,6 @@ import org.springframework.security.web.SecurityFilterChain;
 		public PasswordEncoder passwordEncoder() {
 			return new BCryptPasswordEncoder();
 		}
-
 		
 		@Bean
 		public AuthenticationManager authenticationManager(HttpSecurity http) 
@@ -36,13 +35,6 @@ import org.springframework.security.web.SecurityFilterChain;
 		      .and()
 		      .build();
 		}
-		
-//		@Bean
-//		public WebSecurityCustomizer webSecurityCustomizer() {
-//		    return (web) -> web.debug(securityDebug)
-//		      .ignoring()
-//		      .antMatchers("/css/**", "/js/**", "/img/**", "/lib/**", "/favicon.ico");
-//		}
 		
 		@Bean
 	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -61,7 +53,12 @@ import org.springframework.security.web.SecurityFilterChain;
 	        	.permitAll()
 	        .and()
 	        	.authorizeHttpRequests()
-	        	.requestMatchers("/dashboard").permitAll();
+	        	.requestMatchers("/","/css/**", "/js/**", "/images/**","/plugins/**").permitAll()
+	        	.requestMatchers("/welcome","/index","/register","/team","/services","/works", "/contact").permitAll()
+	        	.requestMatchers("/dashboard").hasAnyRole("USER")
+	        	.requestMatchers("/adminpanel" ).hasRole("ADMIN")
+	        	.anyRequest()
+	        .authenticated();
 	 
 	        return http.build();
 	    }

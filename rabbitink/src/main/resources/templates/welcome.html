@@ -1,6 +1,26 @@
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<!-- 
+THEME: Phantom - Bootstrap Portfolio Template
+VERSION: 1.0.0
+AUTHOR: Themefisher
+
+HOMEPAGE: https://themefisher.com/products/phantom-best-bootstrap-portfolio-template/
+DEMO: https://demo.themefisher.com/phantom/
+GITHUB: https://github.com/themefisher/Phantom-Bootstrap-Portfolio-Template
+
+WEBSITE: https://themefisher.com
+TWITTER: https://twitter.com/themefisher
+FACEBOOK: https://www.facebook.com/themefisher
+-->
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="zxx"
-	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="zxx">
 <head>
 
 <!-- ** Basic Page Needs ** -->
@@ -64,87 +84,61 @@
 		</div>
 	</div>
 
-	<section class="site-wrapper">
+	<main class="site-wrapper">
 		<div class="pt-table">
-			<div class="pt-tablecell page-services relative">
+			<div class="pt-tablecell page-welcome relative">
+				<!-- .close -->
 				<a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+				<!-- /.close -->
+
+				<div class="author-image-large">
+					<img src="images/author.png" alt="Rabbit Ink Logo">
+				</div>
+
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-12 col-lg-offset-1 col-lg-10">
-							<div class="page-title text-center">
+						<div class="col-xs-12 col-md-6 col-lg-7">
+							<div class="page-title">
 								<h2>
-									Rabbit <span class="primary">Ink</span> <span class="title-bg">Dashboard</span>
+									Rabbit <span class="primary">Ink</span> <span class="title-bg">About</span>
 								</h2>
-
-								<div class="col-md-12">
-									<ul
-										class="nav navbar-nav navbar-expand-sm sticky-top navbar-light bg-light"
-										style="margin-left: 35%; margin-top: 5%; margin-bottom: 5%">
-										<li class="nav-item"><a class="nav-link active"
-											aria-current="page" href="#">Profile</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">Orders</a></li>
-
-
-										<li class="nav-item"><form
-												sec:authorize="isAuthenticated()" th:action="@{/logout}"
-												th:method="post">
-												<a class="w3l_contact" type="">
-													<button type="submit" class="logout"
-														style="background-color: transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; outline: none; margin-top: 10%;">Log
-														Out</button>
-												</a>
-											</form></li>
-
-									</ul>
-								</div>
+								<p>Rabbit Ink started its services and activities under the
+									umbrella of Musader LLC in 2020 at 2618 N Grandview Ave in
+									Odessa, Texas.</p>
+								<p>We are committed to providing each client with the best quality and
+									the best prices. We have years of experience and want to bring
+									a unique shopping experience for our customers. Our extensive
+									knowledge and abilities make it easier for our customers to
+									decide their purchase, and we help them before, during, and
+									after their purchase. What separates us in our industry is our
+									willingness to help. Our mission is to help our customers, not
+									sell them.</p>
 							</div>
-							<div class="page-title text-left">
-
-								<table class="table table-striped table-hover">
-									<thead>
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">Order Date</th>
-											<th scope="col">Status</th>
-											<th scope="col">Product</th>
-											<th scope="col">Unit Price</th>
-											<th scope="col">Amount</th>
-											<th scope="col">Total Cost</th>
-											<th scope="col">Comment</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr th:each="order : ${orders}">
-
-											<td th:text="${order.id}"></td>
-											<td
-												th:text="${#temporals.format(order.orderdate, 'dd-MM-yyyy')}"></td>
-											<td th:text="${order.orderStatus}"></td>
-											<td th:text="${order.productType}"></td>
-											<td th:text="${order.unitprice}"></td>
-											<td th:text="${order.unitAmount}"></td>
-											<td th:text="${order.totalPrice}"></td>
-											<td th:text="${order.comment}"></td>
-										</tr>
-
-
-									</tbody>
-								</table>
-							</div>
-
 						</div>
-						<!-- /.col-xs-12 -->
-
 					</div>
 					<!-- /.row -->
 				</div>
+				<!-- /.container -->
+
+				<nav class="page-nav clear">
+					<div class="container">
+						<div class="flex flex-middle space-between">
+							<span class="prev-page"><a href="index.html" class="link">&larr;
+									Prev Page</a></span> <span class="copyright">Copyright &copy; 2021,
+								Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a>.
+							</span> <span class="next-page"><a href="about.html" class="link">Next
+									Page &rarr;</a></span>
+						</div>
+					</div>
+					<!-- /.page-nav -->
+				</nav>
 				<!-- /.container -->
 
 			</div>
 			<!-- /.pt-tablecell -->
 		</div>
 		<!-- /.pt-table -->
-	</section>
+	</main>
 	<!-- /.site-wrapper -->
 
 
@@ -161,9 +155,3 @@ Essential Scripts
 
 </body>
 </html>
-
-
-
-
-
-
